@@ -58,15 +58,19 @@ $box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 
   .extraordinary-button {
-    margin-left: 250px;
-    margin-top: -20px;
-    margin-bottom: 10px;
-    width: 252px;
+        background-color: #ff7300; /* Utilisation de la couleur primaire de Bootstrap */
+        border: none;
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s, opacity 0.3s;
+        border-radius: 10px;
 
-    // &:hover {
-    //   background: darken(#007bff, 10%);
-    //   transform: scale($hover-scale);
-    // }
+        &:hover {
+          background: darken( #32cd32, 10%);
+          transform: scale($hover-scale);
+        }
 
     // &:disabled {
     //   background-color: #ccc;

@@ -37,15 +37,16 @@
 }
 
 .evaluation-button1 {
-  width: 190px;
-  height: 50px;
-  margin-top: 90px;
-  margin-right: -60px;
-  background-color: #ff9100;
-  color: #fff;
+  background-color: #ff7300; /* Utilisation de la couleur primaire de Bootstrap */
   border: none;
-  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
   cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+  border-radius: 10px;
+  width: auto; /* Ajuste automatiquement la largeur du bouton en fonction de son contenu */
+  display: block; /* Assure que le bouton occupe une ligne entière */
+  margin: 10px auto; /* Centre le bouton horizontalement */
 }
 
 button:hover {

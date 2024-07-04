@@ -93,17 +93,42 @@
           max-width: 45%;
         }
       }
+
+      .content-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .news-section {
+          flex: 0 0 60%;
+          padding-right: 20px;
+        }
+
+        .calendar-map-container {
+          flex: 0 0 35%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-right: 100px;
+          .calendar {
+            margin-bottom: 20px;
+          }
+
+          .google-map {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 
   .news {
     list-style: none;
-    width: 100%;
     padding: 0;
     margin: 0;
 
     li {
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       position: relative;
 
       .date {
@@ -119,46 +144,131 @@
         font-weight: bold;
         text-align: left;
       }
+
+      .read-more-button {
+        display: inline-block;
+        margin-left: 5px;
+        background-color: transparent;
+        border: none;
+        color: rgb(12, 12, 12);
+        cursor: pointer;
+        text-decoration: underline;
+        font-size: 14px;
+        padding: 0;
+      }
+    }
+  }
+
+  .extraordinary-button {
+    background-color: #ff5733;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #ff8c66;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(209, 57, 57, 0.3);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    &:hover {
+      animation: pulse 1s infinite;
     }
   }
 }
 
-.extraordinary-button {
-  background-color: #ff5733;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.wp-calendar {
+  width: 290px;
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 
-  &:hover {
-    background-color: #ff8c66;
+  th, td {
+    height: 30px;
+    text-align: center;
+    width: 40px;
+    vertical-align: middle;
+    border: 2px solid #ddd;
+    padding: 10px;
+    transition: background-color 0.3s ease;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(209, 57, 57, 0.3);
+  th {
+    background-color: rgba(247, 247, 247, 0.9);
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
-  &:active {
-    transform: translateY(2px);
-  }
+  td {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #666;
+    font-size: 14px;
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
+    &:hover {
+      background-color: rgba(240, 240, 240, 0.9);
+      cursor: pointer;
     }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
+
+    &.today {
+      background-color: rgba(255, 204, 0, 0.9);
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
     }
   }
 
-  &:hover {
-    animation: pulse 1s infinite;
+  .month-header {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    background-color: rgba(247, 247, 247, 0.9);
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
+}
+
+.calendar-container {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
 }

@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import '../Style/searchterrain.scss';
+import '../Style/Confirmations.scss';
 
 const Confirmation = () => {
     const location = useLocation();
@@ -16,10 +16,10 @@ const Confirmation = () => {
     return (
         <div>
             <Header />
-            <div className="unique-form-container1">
+            <div className="confirmation-container">
                 <h2>Confirmation de Réservation</h2>
                 {terrainId ? (
-                    <div>
+                    <div className="confirmation-details">
                         <p>Votre réservation a été confirmée pour le terrain ID: {terrainId}</p>
                         <p>Heure de début: {new Date(startTime).toLocaleString()}</p>
                         <p>Heure de fin: {new Date(endTime).toLocaleString()}</p>

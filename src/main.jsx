@@ -9,7 +9,9 @@ import About from "./Component/About";
 import Offer from "./Component/Offer";
 import Admin from "./Component/Admin";
 import Avis from "./Component/Avis";
+import ContactForm from "./Component/Contact";
 import Confirmation from "./Component/Confirmations";
+import CreateNews from "./Component/CreateNews";
 import { AuthProvider } from "./Component/AuthContext";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
@@ -42,6 +44,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/confirmation" element={<Confirmation />} />
                 <Route path="/avis" element={<Avis />} />
+                <Route path="/contact" element={<ContactForm />} />
+                <Route path="/news" element={<CreateNews />} />
               </Routes>
             </Router>
           </AuthProvider>

@@ -94,8 +94,9 @@ const Evaluation = () => {
             </label>
           </div>
         </div>
-        <button className='evaluation-button1'><b>Soumettre</b></button>
+        
       </form>
+      <button className='evaluation-button1'><b>Soumettre</b></button>
       <div className="center-link">
         <Link to="/avis"><b><u>Voir la liste des avis</u></b></Link>
       </div>

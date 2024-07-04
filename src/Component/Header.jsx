@@ -27,7 +27,7 @@ const Header = () => {
             <NavLink to="/offer" activeClassName="active">Nos Offres</NavLink>
           </li>
           <li className="menu-item">
-            <NavLink to="/gallery" activeClassName="active">Portfolio</NavLink>
+            <NavLink to="/contact" activeClassName="active">Contact</NavLink>
           </li>
           {isAdmin && (
             <li className="menu-item">

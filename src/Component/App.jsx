@@ -1,16 +1,14 @@
-
 import { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import "../Style/Acceuil.scss";
 import Button from "react-bootstrap/Button";
-
+import GoogleMap from "./GoogleMap";
+import FloatingChat from "./Chat";
 import Carousel from "./Carousel";
-
-
-// import { contractABI, contractAddress } from '../src/contracts/contractInfo';
-// import "./App.css";
+import Calendar from "./Calendrier";
+import News from "./News";
 
 export default class Acceuil extends Component {
   state = {
@@ -30,12 +28,14 @@ export default class Acceuil extends Component {
         <div className="container">
           <Header />
           <Carousel />
+          <FloatingChat />
+
           <main className="main-content">
             <div className="row">
               <div className="col-md-4">
                 <div className="feature">
                   <figure className="feature-image">
-                    <img src="dummy/feature-image-1.jpg" alt="" />
+                    <img src="/public/dummy/feature-image-1.jpg" alt="" />
                   </figure>
                   <h2 className="feature-title">À propos de nous</h2>
                   <p>
@@ -63,7 +63,7 @@ export default class Acceuil extends Component {
               <div className="col-md-4">
                 <div className="feature">
                   <figure className="feature-image">
-                    <img src="dummy/feature-image-2.jpg" alt="" />
+                    <img src="/public/dummy/feature-image-2.jpg" alt="" />
                   </figure>
                   <h2 className="feature-title">Notre Club</h2>
                   <p>
@@ -92,7 +92,7 @@ export default class Acceuil extends Component {
               <div className="col-md-4">
                 <div className="feature">
                   <figure className="feature-image">
-                    <img src="dummy/feature-image-3.jpg" alt="" />
+                    <img src="/public/dummy/feature-image-3.jpg" alt="" />
                   </figure>
                   <h2 className="feature-title">Entraînements</h2>
                   <p>
@@ -121,7 +121,7 @@ export default class Acceuil extends Component {
             </div>
 
             <div className="cta-container">
-              <div className="cta-section" data-bg-image="../../public/dummy/section-bg.jpg">
+              <div className="cta-section" data-bg-image="/public/dummy/feature-image-1.jpg">
                 <h2 className="cta-title">Faire partie de l'équipe</h2>
                 <p>
                   Venez tester votre esprit d'équipe et vos compétences
@@ -135,7 +135,7 @@ export default class Acceuil extends Component {
                   </Button>
                 </Link>
               </div>
-              <div className="cta-section" data-bg-image="../../public/dummy/section-bg.jpg">
+              <div className="cta-section" data-bg-image="/Users/iheb/Desktop/test/hello-world-web/public/dummy/section-bg.jpg">
                 <h2 className="cta-title">Évaluation de votre expérience</h2>
                 <p>
                   Votre opinion est précieuse ! Aidez-nous à nous améliorer en
@@ -149,9 +149,10 @@ export default class Acceuil extends Component {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-md-7">
+            <div className="content-row">
+              <div className="col-md-7 news-section">
                 <h2 className="section-title">News</h2>
+                <News />
                 <ul className="news">
                   <li>
                     <small className="date">10.07.2014</small>
@@ -236,10 +237,11 @@ export default class Acceuil extends Component {
                 </ul>
               </div>
 
-              <br></br>
-
+              <div className="col-md-5 calendar-map-container">
+                <Calendar className="calendar" />
+                <GoogleMap className="google-map" />
+              </div>
             </div>
-            <div className="map"></div>
           </main>
           <Footer />
         </div>

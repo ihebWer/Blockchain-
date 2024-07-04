@@ -5,13 +5,13 @@ import Footer from './Footer';
 import '../Style/admin.scss';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { contractABI, contractAddress } from '../contracts/contractInfo';
+import { contractABI, contractAddress } from '../contracts/NewsContract';
 
-const Admin = () => {
+const CreateNews = () => {
     const [formData, setFormData] = useState({
         title: '',
-        description: '',
-        capacity: ''
+        content: '',
+        date: ''
     });
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -23,8 +23,8 @@ const Admin = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { title, description, capacity } = formData;
-        if (!title || !description || !capacity) {
+        const { title, content, date } = formData;
+        if (!title || !content || !date) {
             setMessage("Tous les champs doivent être remplis.");
             return;
         }
@@ -42,14 +42,17 @@ const Admin = () => {
             const signer = provider.getSigner();
             const contract = new ethers.Contract(contractAddress, contractABI, signer);
 
-            const transaction = await contract.addTerrain(title, description, Number(capacity));
+            // Convert date to timestamp
+            const dateTimestamp = Math.floor(new Date(date).getTime() / 1000);
+
+            const transaction = await contract.addNews(title, content, dateTimestamp);
             await transaction.wait();
 
-            setMessage('Terrain ajouté avec succès.');
-            setFormData({ title: '', description: '', capacity: '' });
+            setMessage('News ajoutée avec succès.');
+            setFormData({ title: '', content: '', date: '' });
         } catch (error) {
-            console.error("Erreur lors de l'ajout du terrain:", error);
-            setMessage(`Échec de l'ajout du terrain: ${error.message}`);
+            console.error("Erreur lors de l'ajout de la news:", error);
+            setMessage(`Échec de l'ajout de la news: ${error.message}`);
         } finally {
             setIsLoading(false);
         }
@@ -58,7 +61,7 @@ const Admin = () => {
     return (
         <div className="unique-form-container1">
             <Header />
-            <h2><b>Ajouter un Terrain</b></h2>
+            <h2><b>Ajouter une News</b></h2>
             <form onSubmit={handleSubmit} className="reservation-form">
                 <table>
                     <tbody>
@@ -75,23 +78,23 @@ const Admin = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td><label htmlFor="description"><h3>Description</h3></label></td>
+                            <td><label htmlFor="content"><h3>Contenu</h3></label></td>
                             <td>
                                 <textarea
-                                    name="description"
-                                    value={formData.description}
+                                    name="content"
+                                    value={formData.content}
                                     onChange={handleChange}
                                     required
                                 />
                             </td>
                         </tr>
                         <tr>
-                            <td><label htmlFor="capacity"><h3>Capacité</h3></label></td>
+                            <td><label htmlFor="date"><h3>Date</h3></label></td>
                             <td>
                                 <input
-                                    type="number"
-                                    name="capacity"
-                                    value={formData.capacity}
+                                    type="date"
+                                    name="date"
+                                    value={formData.date}
                                     onChange={handleChange}
                                     required
                                 />
@@ -100,11 +103,11 @@ const Admin = () => {
                     </tbody>
                 </table>
                 <Button type="submit" className="extraordinary-button" disabled={isLoading}>
-                    {isLoading ? 'Ajout en cours...' : 'Ajouter un terrain'}
+                    {isLoading ? 'Ajout en cours...' : 'Ajouter'}
                 </Button>
-                <Link to="/news">
+                <Link to="/admin">
                   <Button className="extraordinary-button" variant="primary">
-                    Ajoutez une news
+                    Retour
                   </Button>
                 </Link>
             </form>
@@ -114,4 +117,4 @@ const Admin = () => {
     );
 };
 
-export default Admin;
+export default CreateNews;

@@ -4,6 +4,96 @@ $hover-scale: 1.05;
 $border-radius: 10px;
 $box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 
+.unique-form-container1 {
+    background: $background-color;
+    color: #333;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+
+    h2 {
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: $primary-color;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+
+    table {
+        width: 90%;
+        margin-bottom: 20px;
+
+        td {
+            padding: 20px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: $primary-color;
+            margin: 0;
+        }
+
+        .styled-label {
+            font-size: 1.2em;
+            color: $primary-color;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: calc(70% - 59px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #201b1b;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            box-sizing: border-box;
+
+            &:focus {
+                border-color: $primary-color;
+            }
+        }
+
+        .extraordinary-button {
+            margin-top: 20px;
+            width: 200px;
+            background-color: $primary-color;
+            color: #fff;
+            border: none;
+            border-radius: $border-radius;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($primary-color, 10%);
+                transform: scale($hover-scale);
+            }
+
+            &:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    p {
+        font-size: 14px;
+        color: $primary-color;
+        margin-top: 20px;
+    }
+}
+
 .terrain-list-container {
     display: flex;
     flex-direction: column;
@@ -40,6 +130,7 @@ $box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             p {
                 margin-bottom: 10px;
                 color: $primary-color;
+
                 strong {
                     font-weight: bold;
                 }
@@ -59,6 +150,7 @@ $box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
                 padding: 10px 20px;
                 cursor: pointer;
                 transition: all 0.3s ease;
+
                 &:hover {
                     background-color: darken(orange, 10%);
                     transform: scale($hover-scale);
