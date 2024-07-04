@@ -1,0 +1,67 @@
+
+.reservation-container {
+   margin: 5px ; /* Centrer le conteneur */
+  border: 1px solid #ccc; /* Ajouter une bordure */
+  border-radius: 8px; /* Ajouter un rayon de bordure */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-container {
+  border: 1px solid #ccc; /* Ajouter une bordure */
+  border-radius: 8px; /* Ajouter un rayon de bordure */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+.reservation-title {
+  margin-left: 390px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.reservation-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:15px;
+
+}
+
+.form-group {
+  margin-bottom: 9px;
+}
+
+label {
+  margin-left: 90PX;
+  justify-content: center;
+  width: 60%;
+  display:block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reservation-button1 {
+  width: 230PX;
+  padding: 9px;
+  margin-bottom: 10px;
+  margin-left: 90px;
+  font-size: 18px;
+  background-color: #ff9100;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b37a00;
+}
+
