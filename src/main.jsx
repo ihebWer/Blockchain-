@@ -20,8 +20,8 @@ import { sepolia } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const config = getDefaultConfig({
-  appName: "Hello Web3 dApp",
-  projectId: "hellDapp",
+  appName: "CryptoPlay Grounds",
+  projectId: "CryptoPla",
   chains: [sepolia],
 });
 

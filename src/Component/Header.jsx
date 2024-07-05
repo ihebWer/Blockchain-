@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAuth } from './AuthContext';
 import '../Style/Header.scss';
+import Logo from '../images/logo.png'
+
 
 const Header = () => {
   const { isAdmin, isConnected, handleDisconnect } = useAuth();
@@ -9,9 +11,9 @@ const Header = () => {
   return (
     <header className="site-header">
       <a href="/" id="branding" className="pull-left">
-        <img src="../images/logo.png" alt="" className="logo" />
+        <img src={Logo} alt="" className="logo" />
         <div className="logo-text">
-          <p><b>Universal <br /> paintball</b></p>
+          <p><b>CryptoPlay <br /> Grounds</b></p>
         </div>
       </a>
       <div className="main-navigation">

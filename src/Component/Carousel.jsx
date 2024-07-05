@@ -27,7 +27,9 @@ const Carousel = () => {
         <li className="slide" style={{ backgroundImage: `url(../../public/dummy/slide-1.jpg)` }}>
           <div className="content">
             <h2 className="slide-title">Libérez l'adrénaline, vivez le paintball !</h2>
+            <br></br>
             <Link to="/recherche">
+            
               <Button className="carousel-button" variant="primary">Réservez-Maintenant</Button>
             </Link>
           </div>

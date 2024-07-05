@@ -20,6 +20,7 @@
         justify-content: space-between;
         margin-top: 17.5px;
         flex-wrap: wrap;
+        gap: 20px; // Ajoutez cette ligne pour ajouter un espace entre les colonnes
 
         .col-md-4 {
           margin-top: 20px;
@@ -96,12 +97,13 @@
 
       .content-row {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         margin-top: 20px;
 
         .news-section {
           flex: 0 0 60%;
           padding-right: 20px;
+          box-sizing: border-box; // Ensure padding is included in width
         }
 
         .calendar-map-container {
@@ -109,7 +111,8 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-right: 100px;
+          margin-right: 20px;
+          box-sizing: border-box; // Ensure padding is included in width
           .calendar {
             margin-bottom: 20px;
           }

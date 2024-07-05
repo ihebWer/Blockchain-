@@ -31,8 +31,8 @@ export default class Acceuil extends Component {
           <FloatingChat />
 
           <main className="main-content">
-            <div className="row">
-              <div className="col-md-4">
+            <div className="features-row row">
+              <div className="col-md-4 feature-container">
                 <div className="feature">
                   <figure className="feature-image">
                     <img src="/public/dummy/feature-image-1.jpg" alt="" />
@@ -60,7 +60,7 @@ export default class Acceuil extends Component {
                   </p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 feature-container">
                 <div className="feature">
                   <figure className="feature-image">
                     <img src="/public/dummy/feature-image-2.jpg" alt="" />
@@ -89,7 +89,7 @@ export default class Acceuil extends Component {
                   </p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 feature-container">
                 <div className="feature">
                   <figure className="feature-image">
                     <img src="/public/dummy/feature-image-3.jpg" alt="" />

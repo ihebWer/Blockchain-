@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="widget">
             <h3 className="widget-title">Contact</h3>
             <address>
-              <strong>Universal Paintball</strong>
+              <strong>CryptoPlay Grounds</strong>
               <p>12, parvis du, Parv. Colonel Arnaud Beltrame 1er étage, 78000 Versailles</p>
               <a href="mailto:info@companyname.com">Paintballuniversal@ghexagone.com</a>
               <br/><a href="#">07 65 71 85 61</a>
