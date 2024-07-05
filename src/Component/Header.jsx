@@ -2,11 +2,16 @@ import { NavLink } from 'react-router-dom';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAuth } from './AuthContext';
 import '../Style/Header.scss';
-import Logo from '../images/logo.png'
-
+import Logo from '../images/logo.png';
 
 const Header = () => {
-  const { isAdmin, isConnected, handleDisconnect } = useAuth();
+  const { isAdmin, isConnected, handleDisconnect, address } = useAuth();
+
+  // Fonction pour tronquer l'adresse du portefeuille
+  const truncateAddress = (address) => {
+    if (!address) return '';
+    return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+  };
 
   return (
     <header className="site-header">
@@ -38,9 +43,12 @@ const Header = () => {
           )}
         </ul>
         {isConnected ? (
-          <button onClick={handleDisconnect} className="connect-button">
-            Déconnecter
-          </button>
+          <div className="connected-info">
+            <button onClick={handleDisconnect} className="connect-button">
+              Déconnecter
+            </button>
+            <span className="wallet-address">{truncateAddress(address)}</span>
+          </div>
         ) : (
           <ConnectButton.Custom>
             {({ account, chain, openAccountModal, openChainModal, openConnectModal, mounted }) => {

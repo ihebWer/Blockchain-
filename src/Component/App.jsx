@@ -150,7 +150,7 @@ export default class Acceuil extends Component {
             </div>
 
             <div className="content-row">
-              <div className="col-md-7 news-section">
+              <div className="">
                 <h2 className="section-title">News</h2>
                 <News />
                 <ul className="news">
